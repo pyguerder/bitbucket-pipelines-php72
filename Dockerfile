@@ -53,7 +53,7 @@ RUN add-apt-repository -y ppa:ondrej/php && \
     apt-get remove --purge php5 php5-common
 
 # Time Zone
-RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.0/cli/conf.d/date_timezone.ini
+RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.1/cli/conf.d/date_timezone.ini
 
 VOLUME /root/composer
 
