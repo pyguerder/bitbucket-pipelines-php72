@@ -39,14 +39,6 @@ RUN mkdir -p /usr/local/openssl/include/openssl/ && \
     ln -s /usr/lib/x86_64-linux-gnu/libssl.a /usr/local/openssl/lib/libssl.a && \
     ln -s /usr/lib/x86_64-linux-gnu/libssl.so /usr/local/openssl/lib/
 
-# NODE JS
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - && \
-    apt-get install nodejs -qq && \
-    npm install -g gulp
-    
-# YARN
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
-
 # MYSQL
 # /usr/bin/mysqld_safe
 RUN bash -c 'debconf-set-selections <<< "mysql-server-5.7 mysql-server/root_password password $MYSQL_ROOT_PASS"' && \
@@ -57,13 +49,8 @@ RUN bash -c 'debconf-set-selections <<< "mysql-server-5.7 mysql-server/root_pass
 # PHP Extensions
 RUN add-apt-repository -y ppa:ondrej/php && \
     DEBIAN_FRONTEND=noninteractive apt-get update && \
-    apt-get install -y -qq php-pear php7.0-dev php7.0-mcrypt php7.0-zip php7.0-xml php7.0-mbstring php7.0-curl php7.0-json php7.0-mysql php7.0-tokenizer php7.0-cli php7.0-imap && \
+    apt-get install -y -qq php-pear php7.1-dev php7.1-zip php7.1-xml php7.1-mbstring php7.1-curl php7.1-json php7.1-mysql php7.1-tokenizer php7.1-cli php7.1-imap && \
     apt-get remove --purge php5 php5-common
-
-# MONGO extension
-RUN pecl install mongodb && \
-    echo "extension=mongodb.so" > /etc/php/7.0/cli/conf.d/20-mongodb.ini && \
-    echo "extension=mongodb.so" > /etc/php/7.0/mods-available/mongodb.ini
 
 # Run xdebug installation.
 RUN wget --no-check-certificate https://xdebug.org/files/xdebug-2.4.0rc4.tgz && \
@@ -78,7 +65,7 @@ RUN wget --no-check-certificate https://xdebug.org/files/xdebug-2.4.0rc4.tgz && 
     echo 'xdebug.remote_enable=1' >> /etc/php/7.0/cli/conf.d/20-xdebug.ini
 
 # Time Zone
-RUN echo "date.timezone=America/Sao_Paulo" > /etc/php/7.0/cli/conf.d/date_timezone.ini
+RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.0/cli/conf.d/date_timezone.ini
 
 VOLUME /root/composer
 
