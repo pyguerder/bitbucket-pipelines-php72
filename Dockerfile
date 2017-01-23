@@ -52,18 +52,6 @@ RUN add-apt-repository -y ppa:ondrej/php && \
     apt-get install -y -qq php-pear php7.1-dev php7.1-zip php7.1-xml php7.1-mbstring php7.1-curl php7.1-json php7.1-mysql php7.1-tokenizer php7.1-cli php7.1-imap && \
     apt-get remove --purge php5 php5-common
 
-# Run xdebug installation.
-RUN wget --no-check-certificate https://xdebug.org/files/xdebug-2.4.0rc4.tgz && \
-    tar -xzf xdebug-2.4.0rc4.tgz && \
-    rm xdebug-2.4.0rc4.tgz && \
-    cd xdebug-2.4.0RC4 && \
-    phpize && \
-    ./configure --enable-xdebug && \
-    make && \
-    cp modules/xdebug.so /usr/lib/. && \
-    echo 'zend_extension="/usr/lib/xdebug.so"' > /etc/php/7.0/cli/conf.d/20-xdebug.ini && \
-    echo 'xdebug.remote_enable=1' >> /etc/php/7.0/cli/conf.d/20-xdebug.ini
-
 # Time Zone
 RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.0/cli/conf.d/date_timezone.ini
 
