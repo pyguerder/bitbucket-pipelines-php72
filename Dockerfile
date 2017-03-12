@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Eduardo Bizarro <edbizarro@gmail.com>
+MAINTAINER Pierre-Yves Guerder <pierreyves.guerder@gmail.com>
 
 # Set correct environment variables
 ENV HOME /root
@@ -26,6 +26,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     mcrypt \
     wget \
     openssl \
+    ssh \
     autoconf \
     g++ \
     make \

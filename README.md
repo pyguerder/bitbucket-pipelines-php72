@@ -1,8 +1,6 @@
 # Bitbucket Pipelines PHP 7.1 image
 
-[![](https://images.microbadger.com/badges/version/edbizarro/bitbucket-pipelines-php7.svg)](https://microbadger.com/images/edbizarro/bitbucket-pipelines-php7 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/edbizarro/bitbucket-pipelines-php7.svg)](https://microbadger.com/images/edbizarro/bitbucket-pipelines-php7 "Get your own image badge on microbadger.com")
-
-[![forthebadge](http://forthebadge.com/images/badges/fuck-it-ship-it.svg)](http://forthebadge.com)
+[![](https://images.microbadger.com/badges/version/pyguerder/bitbucket-pipelines-php71.svg)](https://microbadger.com/images/pyguerder/bitbucket-pipelines-php71 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/pyguerder/bitbucket-pipelines-php71.svg)](https://microbadger.com/images/pyguerder/bitbucket-pipelines-php71 "Get your own image badge on microbadger.com")
 
 ## Based on Ubuntu 16.04
 
@@ -15,7 +13,7 @@
 ### Sample `bitbucket-pipelines.yml`
 
 ```YAML
-image: oktupol/bitbucket-pipelines-php71
+image: pyguerder/bitbucket-pipelines-php71
 pipelines:
   default:
     - step:
