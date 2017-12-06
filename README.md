@@ -6,14 +6,15 @@
 
 ### Packages installed
 
-- `php7.2-zip`, `php7.2-xml`, `php7.2-mbstring`, `php7.2-curl`, `php7.2-json`, `php7.2-imap`, `php7.2-mysql` and `php7.2-tokenizer`
+- `php7.2-zip`, `php7.2-xml`, `php7.2-mbstring`, `php7.2-curl`, `php7.2-json`, `php7.2-imap`, `php7.2-mysql`, `php7.2-tokenizer`, `php7.2-xdebug`, `php7.2-intl` and `php7.2-gd`
 - [Composer](https://getcomposer.org/)
 - Mysql 5.7
+- NPM
 
 ### Sample `bitbucket-pipelines.yml`
 
 ```YAML
-image: pyguerder/bitbucket-pipelines-php71
+image: pyguerder/bitbucket-pipelines-php71:php7.2
 pipelines:
   default:
     - step:
