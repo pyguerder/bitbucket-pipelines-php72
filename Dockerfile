@@ -53,13 +53,16 @@ RUN bash -c 'debconf-set-selections <<< "mysql-server-5.7 mysql-server/root_pass
 RUN add-apt-repository -y ppa:ondrej/php && \
     DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y -qq npm less composer sudo apache2 libapache2-mod-php7.2 php-pear php7.2-mysql php7.2-dev php7.2-zip php7.2-xml php7.2-mbstring php7.2-curl php7.2-json php7.2-mysql php7.2-tokenizer php7.2-cli php7.2-imap php7.2-intl php7.2-gd php7.2-xdebug && \
-    DEBIAN_FRONTEND=noninteractive apt-get remove --purge -y g++ build-essential make autoconf && \
+    DEBIAN_FRONTEND=noninteractive apt-get remove --purge -y g++ build-essential make php7.1 libapache2-mod-php7.1 autoconf && \
     apt-get clean -y && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Time Zone
-RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.2/cli/conf.d/date_timezone.ini
+# Node libraries
+RUN npm install -g bower bower uglifycss uglify-js
+
+# Timezone & memory limit
+RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.2/cli/conf.d/date_timezone.ini && echo "memory_limit=1G" >> /etc/php/7.2/apache2/php.ini
 
 # Goto temporary directory.
 WORKDIR /tmp
