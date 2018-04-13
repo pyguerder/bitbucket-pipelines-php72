@@ -1,20 +1,20 @@
 # Bitbucket Pipelines PHP 7.2 image
 
-[![](https://images.microbadger.com/badges/version/pyguerder/bitbucket-pipelines-php71.svg)](https://microbadger.com/images/pyguerder/bitbucket-pipelines-php71 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/pyguerder/bitbucket-pipelines-php71.svg)](https://microbadger.com/images/pyguerder/bitbucket-pipelines-php71 "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/pyguerder/bitbucket-pipelines-php72.svg)](https://microbadger.com/images/pyguerder/bitbucket-pipelines-php72 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/pyguerder/bitbucket-pipelines-php72.svg)](https://microbadger.com/images/pyguerder/bitbucket-pipelines-php72 "Get your own image badge on microbadger.com")
 
-## Based on Ubuntu 16.04
+## Based on Ubuntu 18.04
 
 ### Packages installed
 
 - `php7.2-zip`, `php7.2-xml`, `php7.2-mbstring`, `php7.2-curl`, `php7.2-json`, `php7.2-imap`, `php7.2-mysql`, `php7.2-tokenizer`, `php7.2-xdebug`, `php7.2-intl` and `php7.2-gd`
-- [Composer](https://getcomposer.org/)
+- Composer
 - Mysql 5.7
 - NPM
 
 ### Sample `bitbucket-pipelines.yml`
 
 ```YAML
-image: pyguerder/bitbucket-pipelines-php71:php7.2
+image: pyguerder/bitbucket-pipelines-php72
 pipelines:
   default:
     - step:
