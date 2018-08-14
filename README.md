@@ -6,7 +6,8 @@
 
 ### Packages installed
 
-- `php7.2-zip`, `php7.2-xml`, `php7.2-mbstring`, `php7.2-curl`, `php7.2-json`, `php7.2-imap`, `php7.2-mysql`, `php7.2-tokenizer`, `php7.2-xdebug`, `php7.2-intl` and `php7.2-gd`
+- `php7.2-zip`, `php7.2-xml`, `php7.2-mbstring`, `php7.2-curl`, `php7.2-json`, `php7.2-imap`, `php7.2-mysql`, `php7.2-tokenizer`, `php7.2-xdebug`, `php7.2-intl`, `php7.2-soap` and `php7.2-gd`
+- wget, curl, zip
 - Composer
 - Mysql 5.7
 - NPM

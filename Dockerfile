@@ -20,6 +20,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     unzip \
     mcrypt \
     wget \
+    curl \
     openssl \
     ssh \
     locales \
