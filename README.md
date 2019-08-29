@@ -11,6 +11,7 @@
 - Composer
 - Mysql 5.7
 - NPM
+- Node + Yarn
 
 ### Sample `bitbucket-pipelines.yml`
 
