@@ -1,3 +1,4 @@
+FROM composer:2 as composer
 FROM ubuntu:18.04
 
 MAINTAINER Pierre-Yves Guerder <pierreyves.guerder@gmail.com>
@@ -25,7 +26,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     ssh \
     locales \
     less \
-    composer \
     sudo \
     mysql-server \
     npm
@@ -45,6 +45,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get autoclean -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     rm /var/lib/mysql/ib_logfile*
+
+COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 
 # Ensure UTF-8
 ENV LANG       en_US.UTF-8
